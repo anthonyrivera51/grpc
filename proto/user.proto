@@ -1,0 +1,58 @@
+syntax="proto3";
+
+package user;
+
+option go_package = "github.com/anthonyrivera51/go-grpc/proto/";
+
+message User {
+  string id = 1;
+  string name = 2;
+  string password = 3;
+  string username = 4;
+}
+
+message CreateUserReq {
+  User user = 1;
+}
+
+message CreateUserRes {
+  User user = 1;
+}
+
+message UpdateUserReq {
+  User user = 1;
+}
+
+message UpdateUserRes {
+  User user = 1;
+}
+
+message ReadUserReq {
+  User user = 1;
+}
+
+message ReadUserRes {
+  User user = 1;
+}
+
+message DeleteUserReq {
+  User user = 1;
+}
+
+message DeleteUserRes {
+  User user = 1;
+}
+
+message ListUserReq {}
+
+message ListUserRes {
+  User user = 1;
+}
+
+service UserService {
+  rpc CreateUser(CreateUserReq) returns (CreateUserRes);
+  rpc ReadUser(ReadUserReq) returns (ReadUserRes);
+  rpc UpdateUser(UpdateUserReq) returns (UpdateUserRes);
+  rpc DeleteUser(DeleteUserReq)returns (DeleteUserRes);
+  rpc ListUser(ListUserReq) returns (ListUserRes);
+}
